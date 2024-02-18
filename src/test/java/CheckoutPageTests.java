@@ -63,7 +63,7 @@ public class CheckoutPageTests {
         SoftAssert Assert= new SoftAssert();
         String expectedResult="Error: First Name is required";
         Assert.assertTrue(checkoutpage.errorMessage().getText()==expectedResult);
-        Thread.sleep(1000);
+        Assert.assertAll();
     }
     @Test(priority = 4)     // checkout with valid data inputs
     public void TC_16_Checkout() throws InterruptedException {
@@ -75,7 +75,7 @@ public class CheckoutPageTests {
         checkoutpage.ContBtn().click();
         SoftAssert Assert = new SoftAssert();
         Assert.assertTrue(new CheckoutStep2Page(driver).finishBtn().isDisplayed());
-        Thread.sleep(1000);
+        Assert.assertAll();
     }
   @Test(priority = 5)     // checkout with valid data inputs
     public void TC_17_Checkout() throws InterruptedException {
@@ -83,7 +83,7 @@ public class CheckoutPageTests {
         SoftAssert Assert = new SoftAssert();
         new CheckoutStep2Page(driver).finishBtn().click();
         Assert.assertTrue(new completePage(driver).backToHomeBtn().isDisplayed());
-      Thread.sleep(1000);
+        Assert.assertAll();
     }
     @AfterTest
     public void closeBrowser(){

@@ -30,7 +30,7 @@ public class CartPageTests {
         new HomePage(driver).addToCartSouseLabs().click();
         SoftAssert Assert= new SoftAssert();
         Assert.assertTrue(cartpage.SouselabPrice().getText().contains(SousePrice));
-        Thread.sleep(1000);
+        Assert.assertAll();
     }
     @Test(priority = 2)     // validate continue button functionality
     public void TC_10_Cart() throws InterruptedException {
@@ -39,7 +39,7 @@ public class CartPageTests {
         // exepcted result is home page
         SoftAssert Assert= new SoftAssert();
         Assert.assertTrue(new HomePage(driver).optionBtn().isDisplayed());
-        Thread.sleep(1000);
+        Assert.assertAll();
     }
     @Test(priority = 3)     // navigate to cart page
     public void TC_11_Cart() throws InterruptedException {
@@ -48,14 +48,14 @@ public class CartPageTests {
         String actualResult =cartpage.numberInTheCart().getText();
         SoftAssert Assert= new SoftAssert();
         Assert.assertTrue(expectedResult==actualResult);
-        Thread.sleep(1000);
+        Assert.assertAll();
     }
     @Test(priority = 4)
     public void TC_12_Cart() throws InterruptedException {
         cartpage.CheckoutBtn().click();
         SoftAssert Assert= new SoftAssert();
         Assert.assertTrue(new CheckoutPage(driver).fristName().isDisplayed());
-        Thread.sleep(1000);
+        Assert.assertAll();
     }
     @AfterTest
     public void closeBrowser(){

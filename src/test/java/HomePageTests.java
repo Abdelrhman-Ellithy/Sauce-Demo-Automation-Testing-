@@ -29,7 +29,7 @@ public class HomePageTests {
         Home.addToCartSouseLabs().click();
         SoftAssert Assert= new SoftAssert();
         Assert.assertTrue(Home.removeBtn().isDisplayed(),"TC_Home_05 Failed, Remove button Not displayed in home");
-        Thread.sleep(1000);
+        Assert.assertAll();
     }
     @Test(priority = 2)     // valiadate that the number in the card after adding 1 item is one
     public void TC_Home_06() throws InterruptedException {
@@ -37,7 +37,7 @@ public class HomePageTests {
         String expectedResult ="1";
         String actualResult =Home.numberInTheCart().getText();
         Assert.assertTrue(expectedResult.contains(actualResult));
-        Thread.sleep(1000);
+        Assert.assertAll();
     }
     @Test(priority = 3)     // navigate to cart page
     public void TC_Home_07() throws InterruptedException {
@@ -47,7 +47,7 @@ public class HomePageTests {
         String actualResult =Home.driver.getCurrentUrl();
         SoftAssert Assert= new SoftAssert();
         Assert.assertTrue(expectedResult==actualResult);
-        Thread.sleep(1000);
+        Assert.assertAll();
     }
     @Test(priority = 4)
     public void TC_Home_08() throws InterruptedException {
@@ -55,7 +55,7 @@ public class HomePageTests {
         Home.removeBtn().click();
         SoftAssert Assert = new SoftAssert();
         Assert.assertTrue((Home.addToCartSouseLabs().isDisplayed()), "TC_Home_08 Failed, Remove button Still displayed in home");
-        Thread.sleep(1000);
+        Assert.assertAll();
     }
     @AfterTest
         public void closeBrowser(){

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite1]">
+  <test thread-count="5" name="Regression2(failed)">
+    <classes>
+      <class name="HomePageTests">
+        <methods>
+          <include name="TC_Home_07"/>
+          <include name="closeBrowser"/>
+          <include name="setup_browser"/>
+        </methods>
+      </class> <!-- HomePageTests -->
+    </classes>
+  </test> <!-- Regression2(failed) -->
+  <test thread-count="5" name="Regression3(failed)">
+    <classes>
+      <class name="CartPageTests">
+        <methods>
+          <include name="setup_browser"/>
+          <include name="closeBrowser"/>
+          <include name="TC_11_Cart"/>
+        </methods>
+      </class> <!-- CartPageTests -->
+    </classes>
+  </test> <!-- Regression3(failed) -->
+  <test thread-count="5" name="Regression4(failed)">
+    <classes>
+      <class name="CheckoutPageTests">
+        <methods>
+          <include name="setup_browser"/>
+          <include name="closeBrowser"/>
+          <include name="TC_15_Checkout"/>
+        </methods>
+      </class> <!-- CheckoutPageTests -->
+    </classes>
+  </test> <!-- Regression4(failed) -->
+</suite> <!-- Failed suite [Suite1] -->
